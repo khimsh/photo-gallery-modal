@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Gallery</title>
+
+    <link rel="stylesheet" href="assets/style.css" />
+
+    <script defer src="assets/script.js"></script>
+  </head>
+  <body>
+    <button data-open-gallery>click here to view gallery</button>
+    <div class="photo-gallery-modal">
+      <div class="main-slider">
+        <img src="https://lipsum.app/id/5/1024x768" alt="" data-main-image />
+      </div>
+
+      <div class="photo-gallery-modal__images" data-images></div>
+
+      <div class="photo-gallery-modal__arrows">
+        <button role="button" data-prev>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="11.845"
+            height="11.845"
+            viewBox="0 0 11.845 11.845"
+          >
+            <path
+              id="Path_713"
+              data-name="Path 713"
+              d="M1287.463,520.192l1.68,1.68,5.923-5.923-5.923-5.923-1.68,1.68,3.161,3.163h-7.4v2.159h7.4Z"
+              transform="translate(1295.066 521.872) rotate(180)"
+              fill="#fff"
+            />
+          </svg>
+        </button>
+        <button role="button" data-next>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="11.845"
+            height="11.845"
+            viewBox="0 0 11.845 11.845"
+          >
+            <path
+              id="Path_1343"
+              data-name="Path 1343"
+              d="M1287.463,520.192l1.68,1.68,5.923-5.923-5.923-5.923-1.68,1.68,3.161,3.163h-7.4v2.159h7.4Z"
+              transform="translate(-1283.22 -510.026)"
+              fill="#fff"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div class="photo-gallery-modal__controls">
+        <button role="button" data-fullscreen>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="15"
+            height="11"
+            viewBox="0 0 15 11"
+          >
+            <g
+              id="Rectangle_403"
+              data-name="Rectangle 403"
+              fill="none"
+              stroke="#fff"
+              stroke-width="1"
+            >
+              <rect width="15" height="11" stroke="none" />
+              <rect x="0.5" y="0.5" width="14" height="10" fill="none" />
+            </g>
+          </svg>
+        </button>
+        <button role="button" data-toggle-gallery>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+          >
+            <g
+              id="Group_1090"
+              data-name="Group 1090"
+              transform="translate(-22486 24021)"
+            >
+              <rect
+                id="Rectangle_394"
+                data-name="Rectangle 394"
+                width="4"
+                height="4"
+                transform="translate(22486 -24021)"
+                fill="#fff"
+              />
+              <rect
+                id="Rectangle_399"
+                data-name="Rectangle 399"
+                width="4"
+                height="4"
+                transform="translate(22486 -24016)"
+                fill="#fff"
+              />
+              <rect
+                id="Rectangle_402"
+                data-name="Rectangle 402"
+                width="4"
+                height="4"
+                transform="translate(22486 -24011)"
+                fill="#fff"
+              />
+              <rect
+                id="Rectangle_395"
+                data-name="Rectangle 395"
+                width="4"
+                height="4"
+                transform="translate(22491 -24021)"
+                fill="#fff"
+              />
+              <rect
+                id="Rectangle_398"
+                data-name="Rectangle 398"
+                width="4"
+                height="4"
+                transform="translate(22491 -24016)"
+                fill="#fff"
+              />
+              <rect
+                id="Rectangle_400"
+                data-name="Rectangle 400"
+                width="4"
+                height="4"
+                transform="translate(22491 -24011)"
+                fill="#fff"
+              />
+              <rect
+                id="Rectangle_396"
+                data-name="Rectangle 396"
+                width="4"
+                height="4"
+                transform="translate(22496 -24021)"
+                fill="#fff"
+              />
+              <rect
+                id="Rectangle_397"
+                data-name="Rectangle 397"
+                width="4"
+                height="4"
+                transform="translate(22496 -24016)"
+                fill="#fff"
+              />
+              <rect
+                id="Rectangle_401"
+                data-name="Rectangle 401"
+                width="4"
+                height="4"
+                transform="translate(22496 -24011)"
+                fill="#fff"
+              />
+            </g>
+          </svg>
+        </button>
+        <button role="button" data-close>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14.707"
+            height="14.707"
+            viewBox="0 0 14.707 14.707"
+          >
+            <g
+              id="Group_1091"
+              data-name="Group 1091"
+              transform="translate(-22663.076 23958.924)"
+            >
+              <line
+                id="Line_195"
+                data-name="Line 195"
+                x2="19.798"
+                transform="translate(22663.43 -23958.57) rotate(45)"
+                fill="none"
+                stroke="#fff"
+                stroke-width="1"
+              />
+              <line
+                id="Line_196"
+                data-name="Line 196"
+                x2="19.798"
+                transform="translate(22663.43 -23944.57) rotate(-45)"
+                fill="none"
+                stroke="#fff"
+                stroke-width="1"
+              />
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
