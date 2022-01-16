@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*********** Plugin Styles **********/
+.photo-gallery-modal {
+  --clr-bg: 219 65% 8%;
+  --clr-neutral-100: 0 0% 100%;
+  --clr-hover: 0 53% 58%;
+  position: fixed;
+  inset: 0;
+  padding: 34px 8px;
+  background: hsl(var(--clr-bg));
+  z-index: 1000000;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+.photo-gallery-modal.active {
+  display: flex;
+}
+.photo-gallery-modal img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+.photo-gallery-modal__displayed-img {
+  flex-grow: 1;
+}
+.photo-gallery-modal [data-main-image] {
+  max-width: 800px;
+}
+.photo-gallery-modal [data-images] {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 100px);
+  column-gap: 0.5em;
+}
+@media only screen and (max-width: 532px) {
+  .photo-gallery-modal [data-images] {
+    overflow-x: scroll;
+    max-width: 100%;
+    /* width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+  }
+  .photo-gallery-modal [data-images]::-webkit-scrollbar {
+    height: 6px;
+  }
+  .photo-gallery-modal [data-images]::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  .photo-gallery-modal [data-images]::-webkit-scrollbar-thumb {
+    background: #ffbf36;
+  }
+  .photo-gallery-modal [data-images]::-webkit-scrollbar-thumb:hover {
+    background: #ffcd61;
+  }
+}
+.photo-gallery-modal [data-images].hide {
+  display: none;
+}
+.photo-gallery-modal [data-images] img {
+  cursor: pointer;
+}
+.photo-gallery-modal button[role=button] {
+  display: block;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.photo-gallery-modal svg {
+  display: block;
+}
+.photo-gallery-modal__controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid hsl(var(--clr-neutral-100));
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 0.5em 0.85em;
+}
+.photo-gallery-modal__controls [data-fullscreen] svg {
+  display: block;
+  width: 15px;
+  height: 11px;
+  stroke: hsl(var(--clr-neutral-100));
+  transition: stroke 150ms ease-in-out;
+}
+.photo-gallery-modal__controls [data-fullscreen] svg:hover {
+  stroke: hsl(var(--clr-hover));
+}
+.photo-gallery-modal__controls [data-toggle-gallery] svg {
+  display: block;
+  width: 14px;
+  height: 14px;
+  fill: hsl(var(--clr-neutral-100));
+  transition: fill 150ms ease-in-out;
+}
+.photo-gallery-modal__controls [data-toggle-gallery] svg:hover {
+  fill: hsl(var(--clr-hover));
+}
+.photo-gallery-modal__controls [data-close] svg {
+  display: block;
+  width: 14px;
+  height: 14px;
+  stroke: hsl(var(--clr-neutral-100));
+  stroke-width: 1px;
+  transition: stroke 150ms ease-in-out;
+}
+.photo-gallery-modal__controls [data-close] svg:hover {
+  stroke: hsl(var(--clr-hover));
+}
+.photo-gallery-modal__arrows {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.photo-gallery-modal__arrows button[role=button] {
+  position: absolute;
+  display: grid;
+  place-content: center;
+  border: 1px solid hsl(var(--clr-neutral-100));
+  width: 35px;
+  height: 35px;
+  transition: border-color 150ms ease-in-out;
+}
+.photo-gallery-modal__arrows button[role=button]:hover {
+  border-color: hsl(var(--clr-hover));
+}
+.photo-gallery-modal__arrows button[role=button]:hover svg {
+  fill: hsl(var(--clr-hover));
+}
+.photo-gallery-modal__arrows [data-next] svg,
+.photo-gallery-modal__arrows [data-prev] svg {
+  display: block;
+  width: 12px;
+  height: 12px;
+  fill: hsl(var(--clr-neutral-100));
+  transition: fill 150ms ease-in-out;
+}
+.photo-gallery-modal__arrows [data-next] {
+  right: 0;
+}
+
+/*# sourceMappingURL=gallery-modal.css.map */
