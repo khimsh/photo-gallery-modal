@@ -6,7 +6,7 @@ if (document.querySelector('.photo-gallery-modal')) {
   const arrRight = document.querySelector('[data-next]');
   const fullscreen = document.querySelector('[data-fullscreen]');
   const toggleGallery = document.querySelector('[data-toggle-gallery]');
-  const closeModal = document.querySelector('[data-close]');
+  const closeModalBtn = document.querySelector('[data-close]');
   let counter = 0;
 
   let images = [
@@ -57,22 +57,29 @@ if (document.querySelector('.photo-gallery-modal')) {
 
   // Go to Previous image
   arrLeft.addEventListener('click', () => {
-    counter = counter - 1;
-
-    if (counter < 0) {
-      counter = images.length - 1;
-    }
-    mainImage.src = images[counter].imgSrc;
+    previousImage();
   });
 
   // Go to Next image
   arrRight.addEventListener('click', () => {
-    counter = counter + 1;
-    if (counter > images.length - 1) {
-      counter = 0;
-    }
+    nextImage();
+  });
 
-    mainImage.src = images[counter].imgSrc;
+  // Keyboard controls
+  window.addEventListener('keydown', (e) => {
+    if (galleryModal.classList.contains('active')) {
+      if (e.key == 'ArrowLeft') {
+        previousImage();
+      }
+
+      if (e.key == 'ArrowRight') {
+        nextImage();
+      }
+
+      if (e.key == 'Escape') {
+        closeModal();
+      }
+    }
   });
 
   // Show all images at the bottom
@@ -93,8 +100,8 @@ if (document.querySelector('.photo-gallery-modal')) {
   });
 
   // Close modal
-  closeModal.addEventListener('click', () => {
-    galleryModal.classList.remove('active');
+  closeModalBtn.addEventListener('click', () => {
+    closeModal();
   });
 
   // Open modal
@@ -110,5 +117,27 @@ if (document.querySelector('.photo-gallery-modal')) {
     image.alt = desc;
 
     return image;
+  }
+
+  function nextImage() {
+    counter = counter + 1;
+    if (counter > images.length - 1) {
+      counter = 0;
+    }
+
+    mainImage.src = images[counter].imgSrc;
+  }
+
+  function previousImage() {
+    counter = counter - 1;
+
+    if (counter < 0) {
+      counter = images.length - 1;
+    }
+    mainImage.src = images[counter].imgSrc;
+  }
+
+  function closeModal() {
+    galleryModal.classList.remove('active');
   }
 }
